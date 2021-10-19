@@ -1,11 +1,43 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html>
+    <head>
+        <title>External Style Sheet</title>
+        <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    </head>
+</html>
+<html>
+    <head>
+    <style>
+    body {
+      background-image: url("https://image.freepik.com/free-photo/white-woven-fabric_53876-89528.jpg");
+    }
+    </style>
+    </head>
+    <body>
+<html>
+<head>
+  <title>Embedded Style Example</title>
+  <!-- change the color to something else 
+    -->
+  <style>
+    span
+    {
+    background-color:
+    FFD86ED;
+    }
+  </style>
+</head>
+
+
 
 <html>
     <head>
         <title>Contact Us!</title>
     </head>
 
-    <h3>Contact Us!</h3>
-
+  
+    <h3 style="color:rgb(207, 65, 165);">Contact Us!</h3>
 
     <body>
         
@@ -14,13 +46,13 @@
             Last Name: <input type="text" id="lName"><br>
             Email Address: <input type="text" id="email"><br>
           
-            <h2>  Do you accept the terms of service?</h2>
-            <h6>  See Below for TOS</h6>
+            <h2><span>Do you accept the terms of service?</span></h2>
+            <h5><span>See Below for TOS</span></h5>
 <input type="checkbox" name="Yes" value="Yes">Yes<br>
 <input type="checkbox" name="No" value="No">No<br>
 
 
-            <button id="mySubmit" type="submit">Submit - Goes No Where</button>
+            <button id="mySubmit" type="submit">Submit - Goes Nowhere</button>
         </form>
     </body>
 
@@ -45,11 +77,29 @@
 
 
 
+<h6><span>TOS</span></h6>
 
-
-
-<h6>TOS</h6>
-
-  <li>
+  <body>
     <a href="https://www.youtube.com/watch?v=eBGIQ7ZuuiU">TOS</a>
-  </li>
+  </body>
+
+
+
+
+
+
+
+
+
+  <html>
+    <head>
+        <title>Why is this so hard?</title>
+        <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    </head>
+    <body>
+        <span id="specificColor">Ugh why</span>
+        <span id="specificColor">I need one more tag</span>
+        <span id="specificColor">Why is this so hard?</span>
+        <a href="https://youtu.be/zbnXekVn_Pw?t=20" id="specificLink" target="_new">yeehaw</a>
+    </body>
+</html>

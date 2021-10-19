@@ -1,0 +1,16 @@
+span{
+    color:rgb(112, 235, 194);
+    background-color:F6E40D;
+}
+
+#specificColor{
+    color:rgb(236, 42, 188);
+    font-family:verdana;
+    font-size:24px;
+}
+
+#specificLink{
+    color:rgb(137, 80, 241);
+    font-family:arial;
+    font-size:28px;
+}
