@@ -6,13 +6,13 @@ function setup()
 {
 
     createCanvas(600,600);
-
+    background(249, 178, 196);
 
 }
 
 function draw()
             {
-                background(249, 178, 196);
+                
             }
 myButton.draw();{ // <- Draw the 'myButton' Clickable
             //...
