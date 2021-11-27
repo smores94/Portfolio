@@ -9,11 +9,26 @@
         <script src="p5.clickable.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
         <script src="gamepage2.js"></script>
+        
 
-    </head>
-    <body>
-    </body>
+      
+        <html>
+            <head>
+              <script language="javascript">
+                  window.onload = function () {
+                      var oImage = new Image();
+                      oImage.onload = function () {
+                          document.getElementById('myImage').src = oImage;
+                       
+                      };
+                      oImage.src = 'dora.jpeg';
+                  }
+              </script>
+        
+              <img id="myImage" src="" />
+   
     </html>
+    
           
 
       
