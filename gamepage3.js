@@ -1,31 +1,40 @@
-var y;
-var changeDirection;
-var x;
-var changeDirection;
-var speedX = 2.5;
-var speedY= 1.6;
-var position
+var x = 50;
+var y = 50;
+var diameter = 25;
+var mousex = 0;
+var mousey = 0;
+var s = 83;
+var w = 87;
+var a = 65;
+var d = 68;
+var myImage = dora.jpeg;
 var myGamePiece;
-var myUpBtn;
-var myDownBtn;
-var myLeftBtn;
-var myRightBtn;
-var myGamePiece;
-var myGameArea;
+var myObstacle;
+var myGameArea = this.canvas
 
-
-
- 
-
- // this function is called only once
-function setup()
+function setup() 
 {
+  createCanvas(800, 600);
+}
 
-    createCanvas(800,600);
 
+  
+function startGame() {
+    myGamePiece = new component(myImage);
+    myGameArea.start();
+}
 
-    
+function updateGameArea() {
+    myGameArea.clear();
+    myObstacle.update();
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+// this function is called only once
 
+function setup() 
+{
+  createCanvas(1000, 600);
 
 //game components
   
@@ -40,11 +49,9 @@ function setup()
   rectMode(CENTER);
 }
 
-/* this function is called continuously
-    while the sketch is open in the browser
-*/
-  
 function draw(){
+
+    
 
  //object One
    noFill();
@@ -52,7 +59,7 @@ function draw(){
    strokeWeight(5)
    ellipse(x,500,20,20);
    ellipse(50, 200, 30, y+x/3);
-  if(x >= 400 || x <= 0)
+  if(x >= 800 || x <= 0)
     
        movement *= -1;
          x += movement;
@@ -100,8 +107,7 @@ function draw(){
     }
 
      x += movement;
-    
-  
+     
   
      //catch me
     noFill();
@@ -135,11 +141,65 @@ function draw(){
    translate(130,frameCount*2%height);
   rotate(frameCount/20%TWO_PI);
 
+  //dora
+ 
+
+  if (x >= 300) 
+  {
+    x = 50;
+  }
+
+  if (keyIsDown(83)) 
+  {
+    y += 10;
+  } 
+  else if (keyIsDown(87)) 
+  {
+    y -= 10;
+  }
+
+  if (y >= 300) 
+  {
+    y = 50;
+  }
+
+  if (diameter < 200) 
+  {
+    diameter += 2;
+  } 
+  else if (diameter >= 200) 
+  {
+    diameter = 25;
+  }
+
+  circle(mousex, mousey, 30);
 }
 
+function mousePressed()
+{
+    mousex = mouseX;
+    mousey = mouseY;
+
+}
+function keyPressed() 
+{
+  if (key == 's') 
+  {
+    x += 10;
+  } 
+  else if (key == 'a') 
+  {
+    x -= 10;
+    if (key == 'd') 
+    {
+      x += 10;
+    } 
+    else if (key == 'a') 
+    {
+      x -= 10;
+  }
 
 
 
-
-
-
+  }
+}
