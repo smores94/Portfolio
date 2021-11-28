@@ -1,6 +1,5 @@
 sketch.js
 
-
 var y;
 var changeDirection;
 var x;
@@ -137,6 +136,3 @@ function draw()
 
 
 }
-  
-   
-  
