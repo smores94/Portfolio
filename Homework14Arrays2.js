@@ -1,3 +1,8 @@
+var diameter = 25;
+var s = 83;
+var w = 87;
+var a = 65;
+var d = 68;
 var x = 50;
 var y = 50;
 var diameter = 25;
@@ -9,12 +14,14 @@ var myXs = [];
 var myYs = [];
 var myDiameters = [];
 
-
+var myXs = []; // create an array for the x coordinate
+var myYs = []; // create an array for the y coordinate
+var myDiameters = []; // create array for the diameter of circles
 
 
 //x and y for my player
-var characterX = 30;
-var characterY = 50;
+var characterX = 100;
+var characterY = 150;
 
 //define key codes for each letter
 var shapeX;
@@ -22,9 +29,45 @@ var shapeY;
 var shapeXSpeed;
 var shapeYSpeed;
 
+//x and y for shapes
+var shapeXs = [];
+var shapeYs = [];
+var diameters = [];
+var shapeXSpeeds = [];
+var shapeYSpeeds = [];
+
+
 //create a shape when the mouse is clicked
 var mouseShapeX = 10;
 var mouseShapeY = 10;
+var mousex = 0;
+var mousey = 0;
+
+function setup() 
+{
+  createCanvas(800, 600);
+  background(255, 204, 153);
+ 
+
+  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  shapeXs[i] = getRandomNumber(500);
+  shapeYs[i] = getRandomNumber(600);
+  diameters[i] = getRandomNumber(30);
+
+
+      // create a for loop here to create the circles
+      for(var i = 0; i < 2; i++)
+      {
+          // get all the random numbers to create a circles
+          myXs[i] = getRandomNumber(800);
+          myYs[i] = getRandomNumber(600);
+          myDiameters[i] = getRandomNumber(100);
+      }
+}
+
 
 function setup() 
 {
@@ -110,6 +153,9 @@ function draw()
       //call moving rectangle
       createmovingrectangle();
 
+      //call moving ellipse
+      createcreatemovingellipse();
+
 
 
 
@@ -165,14 +211,22 @@ function createcharacterMovement()
     
      
 }
+     function createrandomspeed()
+     //random speed
+     {
+     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1)();
+     shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1)();
+     }
+
      function createblock()
      //fill with color shape
      {
      fill (249,107,3);
-     circle (600,400,10);
+     circle (500,300,10);
      fill (255, 204, 100);
      rect (220, 120, 60, 60);
      }
+
      function createmoveshape()
      //move shape
      {
@@ -180,17 +234,6 @@ function createcharacterMovement()
      shapeY += shapeYSpeed;
      }
 
- 
-
-     function createrandomspeed()
-     //random speed
-     {
-     shapeXSpeed  = Math.floor(Math.random() * 5) + 1;
-     x = 1;
-     shapeYSpeed = Math.floor(Math.random() * 5) + 1;
-     y = 1;
-
-     }
 
      function createcheckifplayerleft()
      //check if player has left exit
@@ -223,22 +266,22 @@ function createcharacterMovement()
      function createcheckoutofbounds()
      {
 
-     if (shapeX > width)
+     if (characterX > width)
      {      
-         shapeX = 0;
+         characterX = 0;
      }
-     if (shapeX < width)
+     if (characterX < width)
      {     
-         shapeX = 0;
+         characterX = 0;
      }
-     if (shapeY > height)
+     if (characterY > height)
      {     
-         shapeY = 0;
+        characterY = 0;
      }
      
-     if (shapeY < height)
+     if (characterY < height)
      {
-         shapeY = 0;
+        characterY = 0;
      }
     }
      function createmouseproblem()
@@ -267,19 +310,19 @@ function createcharacterMovement()
 }
    
   
-     function createmovingshape() 
-     //moving shape
-     {
-     fill('rgba(172, 244, 247,0.9)') 
-     movement = Math.floor(Math.random() * 5) + 1;
-        x = 1;
-      movement = Math.floor(Math.random() * 5) + 1;
-        y = 1;
-       changeDirection = false;
-       //this variable acts as a "switch" that decides which direction
-       //the circle is going based on it's position
-     rectMode(CENTER);
-     }
+function createmovingshape() 
+//moving shape
+{
+fill('rgba(172, 244, 247,0.9)') 
+movement = Math.floor(Math.random() * 5) + 1;
+   x = 1;
+ movement = Math.floor(Math.random() * 5) + 1;
+   y = 1;
+  changeDirection = false;
+  //this variable acts as a "switch" that decides which direction
+  //the circle is going based on it's position
+rectMode(CENTER);
+}
 
      function createmovingrectangle()
       //rectangle
@@ -295,6 +338,13 @@ function createcharacterMovement()
 
      x += movement;
 
+}
+  function createmovingellipse()
+  {
+  fill('rgba(187, 143, 206, 0.9)') 
+   ellipse(x,300,20,20);
+   translate(130,frameCount*2%height);
+    rotate(frameCount/20%TWO_PI);
 }
 
   
