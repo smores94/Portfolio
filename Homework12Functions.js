@@ -119,17 +119,16 @@ function draw()
 
 function createBorders()
 {
-  
-     //top border
-    rect(0,0,width,10);
-    //left border
-    rect(0,0,10,height);
-    //bottom border
-    rect(0,height-10,width,10);
-    //right border
-    rect(width-10,0,10,height-50);
-    //exit message
-    text ("Exit", width-50,height-50)
+//top border
+rect(0,0,width,15);
+//left border
+rect(15,0,0,height);
+//bottom border
+rect(0,height-10,width,10);
+//right border
+rect(width-10,0,10,height-50);
+//exit message
+text ("Exit", width-50,height-50)
 }    
 
 function createCharacter()
@@ -165,6 +164,12 @@ function createcharacterMovement()
     
      
 }
+     function createrandomspeed()
+     //random speed
+     {
+     shapeXSpeed = math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1)();
+     shapeYSpeed = math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1)();
+     }
      function createblock()
      //fill with color shape
      {
@@ -318,4 +323,4 @@ function createcharacterMovement()
     
      
      
-    
+
